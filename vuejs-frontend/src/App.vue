@@ -84,6 +84,7 @@
 </template>
     
 <!-- Frontend script for pulling the data from our backend! -->
+<!-- aerfera -->
 <script>
 import axios from 'axios'
 
@@ -109,13 +110,13 @@ export default {
 
     async fetchPosts() {
       this.loading = true
-      const response = await axios.get('http://workshop{number}.bchwy.com/2read.php')
+      const response = await axios.get('http://workshop3.bchwy.com/2read.php')
       this.posts = response.data
       this.loading = false
     },
 
     async addPost() {
-      const response = await axios.post('http://workshop{number}.bchwy.com/1create.php', this.newPost, {
+      const response = await axios.post('http://workshop3.bchwy.com/1create.php', this.newPost, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
@@ -132,7 +133,7 @@ export default {
     },
 
     async deletePost(id) {
-      await axios.post('http://workshop{number}.bchwy.com/4delete.php', { id }, {
+      await axios.post('http://workshop3.bchwy.com/4delete.php', { id }, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
@@ -151,7 +152,7 @@ export default {
     },
 
     async updatePost(updatedPost) {
-      await axios.post('http://workshop{number}.bchwy.com/3update.php', updatedPost, {
+      await axios.post('http://workshop3.bchwy.com/3update.php', updatedPost, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
